@@ -1,6 +1,6 @@
-package command;
-import shape.MyShape;
-import canvas.MyCanvas;
+package oop.draw.command;
+import oop.draw.shape.MyShape;
+import oop.draw.canvas.MyCanvas;
 public class DrawShapeCommand implements Command{
 
     private MyShape myShape;

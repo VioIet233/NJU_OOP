@@ -1,6 +1,6 @@
-package canvas;
+package oop.draw.canvas;
 
-import shape.MyShape;
+import oop.draw.shape.MyShape;
 
 import java.util.ArrayList;
 import java.util.List;

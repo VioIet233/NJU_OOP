@@ -1,7 +1,7 @@
-package command;
+package oop.draw.command;
 
-import canvas.MyCanvas;
-import shape.MyShape;
+import oop.draw.canvas.MyCanvas;
+import oop.draw.shape.MyShape;
 
 public class CopyShapeCommand implements Command{
 

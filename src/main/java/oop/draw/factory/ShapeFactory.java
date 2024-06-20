@@ -1,6 +1,6 @@
-package factory;
+package oop.draw.factory;
 
-import shape.*;
+import oop.draw.shape.*;
 
 public class ShapeFactory {
     public static MyShape getShape(String shapeType , String context){

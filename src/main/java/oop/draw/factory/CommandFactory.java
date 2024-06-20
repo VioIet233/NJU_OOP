@@ -1,9 +1,9 @@
-package factory;
+package oop.draw.factory;
 
-import command.*;
+import oop.draw.command.*;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Shape;
-import shape.*;
+import oop.draw.shape.*;
 
 public class CommandFactory {
 

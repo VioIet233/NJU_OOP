@@ -1,4 +1,4 @@
-package shape;
+package oop.draw.shape;
 
 import javafx.scene.shape.Shape;
 public interface MyShape {

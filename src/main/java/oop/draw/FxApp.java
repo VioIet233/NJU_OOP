@@ -1,7 +1,9 @@
-import canvas.MyCanvas;
-import command.Command;
-import factory.CommandFactory;
-import factory.ShapeFactory;
+package oop.draw;
+
+import oop.draw.canvas.MyCanvas;
+import oop.draw.command.Command;
+import oop.draw.factory.CommandFactory;
+import oop.draw.factory.ShapeFactory;
 
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
@@ -12,7 +14,7 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
-import shape.MyShape;
+import oop.draw.shape.MyShape;
 
 import java.util.ArrayList;
 

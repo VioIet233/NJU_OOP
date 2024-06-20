@@ -1,4 +1,4 @@
-package command;
+package oop.draw.command;
 
 public interface Command {
     void execute();

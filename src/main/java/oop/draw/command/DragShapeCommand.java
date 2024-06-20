@@ -1,7 +1,7 @@
-package command;
+package oop.draw.command;
 
 import javafx.geometry.Point2D;
-import shape.MyShape;
+import oop.draw.shape.MyShape;
 
 public class DragShapeCommand implements Command {
 
