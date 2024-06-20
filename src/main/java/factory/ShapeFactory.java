@@ -3,7 +3,7 @@ package factory;
 import shape.*;
 
 public class ShapeFactory {
-    public static MyShape getShape(String shapeType){
+    public static MyShape getShape(String shapeType , String context){
         if(shapeType == null){
             return null;
         }
@@ -13,6 +13,7 @@ public class ShapeFactory {
             case "Line" -> new MyLine(900, 500, 600, 500);
             case "Ellipse" -> new MyEllipse(800, 500, 150, 100);
             case "Triangle" -> new MyTriangle(700, 400, 650, 500, 750, 500);
+            case "Text" -> new MyText(800, 500, context);
             default -> null;
         };
 

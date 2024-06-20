@@ -7,6 +7,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Shape;
@@ -23,7 +24,7 @@ public class FxApp extends Application {
 
     private final MyCanvas myCanvas = MyCanvas.getInstance();
     private ArrayList<Command> commands = new ArrayList<>();
-    private final String[] butText = {"Rectangle", "Circle", "Ellipse", "Triangle", "Line", "Copy", "Delete", "Revoke"};
+    private final String[] butText = {"Rectangle", "Circle", "Ellipse", "Triangle", "Line", "Text", "Copy", "Delete", "Revoke"};
 
     private MyShape chosenShape = null;
     Point2D dragDistance, pressedPoint, releasedPoint;
@@ -60,20 +61,24 @@ public class FxApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         ArrayList<Button> butList = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        TextField textField = new TextField();
+        textField.setLayoutX(920);
+        textField.setLayoutY(20);
+        root.getChildren().add(textField);
+        for (int i = 0; i < 9; i++) {
             Button but = new Button(butText[i]);
             but.setLayoutX(20 + 100 * i);
             but.setLayoutY(20);
             but.setMinWidth(80);
-            if (i < 5) {
+            if (i < 6) {
                 but.setOnAction(event -> {
-                    MyShape myShape = ShapeFactory.getShape(but.getText());
+                    MyShape myShape = ShapeFactory.getShape(but.getText() , textField.getText());
                     addShapeEvent(myShape);
                     Command command = CommandFactory.getCommand("Draw", myShape, null, null);
                     command.execute();
                     commands.add(command);
                 });
-            } else if (i == 5) {
+            } else if (i == 6) {
                 but.setOnAction(event -> {
                     if (chosenShape != null) {
                         MyShape copy = chosenShape.copy();
@@ -83,7 +88,7 @@ public class FxApp extends Application {
                         commands.add(command);
                     }
                 });
-            } else if (i == 6) {
+            } else if (i == 7) {
                 but.setOnAction(event -> {
                     if (chosenShape != null) {
                         Command command = CommandFactory.getCommand("Delete", chosenShape, null, null);
@@ -91,7 +96,7 @@ public class FxApp extends Application {
                         commands.add(command);
                     }
                 });
-            } else if (i == 7) {
+            } else if (i == 8) {
                 but.setOnAction(event -> {
                     if (!commands.isEmpty()) {
                         Command command = commands.getLast();
